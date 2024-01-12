@@ -13,7 +13,7 @@ class MessageContract extends Contract {
 
         // add the initial data to the ledger
         for (const data of initialData) {
-            await this.publishMessage(ctx, data.rollNum, data.message);
+            await this.publishMessage(ctx, data.roll_No, data.message);
         }
 
         
@@ -46,7 +46,7 @@ class MessageContract extends Contract {
         return message.toString('utf-8');
     }
 
-    // Additional innovative functionality - Fetch all messages on the ledger
+    // Additional functionality - Fetch all messages on the ledger
     async fetchAllMessages(ctx) {
         const iterator = await ctx.stub.getStateByRange('', '');
         const messages = [];
